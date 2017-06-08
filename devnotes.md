@@ -1,5 +1,7 @@
 **Development Notes:**
 
+*Reminder:  after major feature update, change 'relver' and push to AUR*
+
 - [Setup.py Quickstart](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html)
 - [Python - install script to system](https://stackoverflow.com/questions/874521/python-install-script-to-system)
 - [Sample PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=tovid)
@@ -9,3 +11,4 @@
 - [Added AGPLv3 license](https://choosealicense.com/licenses/agpl-3.0/#)
 - [Submit package to AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository#Submitting_packages)
   - Generate ```.SRCINFO```; ```$ makepkg --printsrcinfo > .SRCINFO`````
+- libraries going to stay internal to make cross platform support easier
