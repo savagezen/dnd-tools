@@ -6,6 +6,7 @@
 - [Git commit for package version](https://stackoverflow.com/questions/4916492/git-describe-fails-with-fatal-no-names-found-cannot-describe-anything)
 - [Check package sanity](https://wiki.archlinux.org/index.php/creating_packages#Checking_package_sanity)
 - [Added AGPLv3 license](https://choosealicense.com/licenses/agpl-3.0/#)
+- Sometimes errors installing, may need to remove ```/usr/lib/python3.6/site-packages/UNKOWN-0.0.0-py-3.6-egg-info```
 
 **To Do:**
 
@@ -13,7 +14,6 @@
   - update ```pkgbuild``` repo
   - update ```scripts``` repo
 - script features
-  - tarokka cards
   - wild magic
   - loot generator
   - npc generator?
