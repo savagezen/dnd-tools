@@ -14,7 +14,6 @@
   - update ```pkgbuild``` repo
   - update ```scripts``` repo
 - script features
-  - wild magic
   - loot generator
   - npc generator?
   - random adventure generator?
