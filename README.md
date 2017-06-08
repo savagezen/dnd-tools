@@ -1,12 +1,12 @@
 # dnd-tools
 
-Interactive command line tools for Dungeons and Dragons 5th Edition.  This is the source code for the  python scripts and install functions used to create the [dnd-tools AUR package](https://aur.archlinux.org/packages/dnd-tools/).
+Interactive command line tools for Dungeons and Dragons 5th Edition.  This is the source code for the python scripts and install functions used to create the [dnd-tools AUR package](https://aur.archlinux.org/packages/dnd-tools/).
 
 ---
 
 #### Features:
 
-- Compeltely interactive
+- Completely interactive
   - Main menu pr
 - Character generator (can be completely random), output to stdout
 - Dice roller (any number of dice, any number of sides)
