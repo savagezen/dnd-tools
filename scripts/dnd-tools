@@ -967,6 +967,7 @@ def summary_fn():
   print('Intelligence:   ', abl_int,  '(', mod_int, ')')
   print('Wisdom:         ', abl_wis,  '(', mod_wis, ')')
   print('Charisma:       ', abl_cha,  '(', mod_cha, ')')
+  start_fn()
 
 # Script
 start_fn()
