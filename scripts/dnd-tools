@@ -7,6 +7,7 @@
 import random
 import math
 import itertools
+import secrets
 
 ##########################
 # Lists and Dictionaries #
@@ -289,7 +290,7 @@ def wild_magic_fn():
     print("You regain all expended sorcery points")
   elif roll in (11,12):
     def roll_2_fn():
-      roll_2 = random.randint(1,10)
+      roll_2 = secrets.choice(range(1,10))
       if roll_2 in (1,3,5,7,9):
         print("You shrink ",roll_2," inches")
       else:
@@ -297,7 +298,7 @@ def wild_magic_fn():
     roll_2_fn()
   elif roll in (35,36):
     def roll_3_fn():
-      roll_3 = random.randint(1,10)
+      roll_3 = secrets.choice(range(1,10))
       if roll_3 in (1,3,5,7,9):
         print ("You grow ",roll_3," years younger - minimum of one year")
       else:
@@ -306,14 +307,14 @@ def wild_magic_fn():
   elif roll in (37,38):
     def roll_4_fn():
       global roll_4
-      roll_4 = random.randint(1,4)
+      roll_4 = secrets.choice(range(1,4))
     roll_4_fn()
     print(roll_4," flumphs controlled by the DM appear in unoccupied spaces within 60 feet of you and are firghtened of you.  They vanish after 1 minute")
 
   elif roll in (39,40):
     def roll_5_fn():
       global roll_5
-      roll_5 = random.randint(1,10)
+      roll_5 = secrets.choice(range(1,10))
       roll_5 = (roll_5 * 2)
     roll_5_fn()
     print("You regain ",roll_5," hit points")
@@ -328,19 +329,19 @@ def wild_magic_fn():
     def roll_7_fn():
       global damage
       for _ in itertools.repeat(None,4):
-        damage = random.randint(1,10)
+        damage = secrets.choice(range(1,10))
     roll_7_fn()
     print("Up to three creatures you choose within 30 feet of you take ",damage," lightning damage")
   elif roll in (73,74):
     def roll_8_fn():
       global hours
-      hours = random.randint(1,4)
+      hours = secrets.choice(range(1,4))
     roll_8_fn()
     print("A random creature within 60 feet of you becomes poisoned for ",hours," hours")
   elif roll in (83,84):
     def roll_9_fn():
       global damage
-      damage = random.randint(1,10)
+      damage = secrets.choice(range(1,10))
     roll_9_fn()
     print("Each creature within 30 feet of you takes ",damage," necrotic damage.  You regain hit points equa to the sum damage")
   else:
@@ -878,19 +879,19 @@ def hp_fn():
   global char_hp
   print('Now we need to calculate hit points.')
   if char_class in ('Barbarian'):
-    hit_die = random.randint(1,12)
+    hit_die = secrets.choice(range(1,12))
     char_hp = mod_con + hit_die
     print('You scored ', char_hp, ' hit points')
   elif char_class in ('Fighter', 'Paladin', 'Ranger'):
-    hit_die = random.randint(1,10)
+    hit_die = secrets.choice(range(1,10))
     char_hp = mod_con + hit_die
     print('You scored ', char_hp, ' hit points')
   elif char_class in ('Wizard', 'Sorcerer'):
-    hit_die = random.randint(1,6)
+    hit_die = secrets.choice(range(1,6))
     char_hp = mod_con + hit_die
     print('You scored ', char_hp, ' hit points')
   else:
-    hit_die = random.randint(1,8)
+    hit_die = secrets.choice(range(1,8))
     char_hp = mod_con + hit_die
     print('You scored ', char_hp, ' hit points')
   
