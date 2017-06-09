@@ -44,7 +44,10 @@ $ /usr/bin/dnd-tools
 **To Do:**
 
 - script features
+  - encounter difficulty (xp multiplier)
+  - magic shop generator
   - loot generator
   - move lists / dictionaries to library files?
   - npc generator?
   - random adventure generator?
+  - dungeon generator?

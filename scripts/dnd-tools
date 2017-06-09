@@ -8,6 +8,7 @@ import random
 import math
 import itertools
 import secrets
+import sys
 
 ##########################
 # Lists and Dictionaries #
@@ -480,13 +481,13 @@ def weight_fn():
     global weight_mod
     if  char_race in ('Human', 'Half-Elf', 'Tiefling'):
       weight_mod = height_mod * (random.randrange(1,4) + random.randrange(1,4))
-    elif char_race in ('Hill Dwarf', 'Mountain Dwarf', 'Dragonborn', 'Half-Orc'):
+    elif char_race in ('Hill Dwarf', 'Mountain Dwarf', 'Dwarf', 'Dragonborn', 'Half-Orc'):
       weight_mod = height_mod * (random.randrange(1,6) + random.randrange(1,6))
     elif char_race in ('High Elf', 'Wood Elf', 'Elf'):
       weight_mod = height_mod * random.randrange(1,4)
     elif char_race == 'Drow':
       weight_mod = height_mod * random.randrange(1,6)
-    elif char_race in ('Halfling', 'Lightfoot Halfling', 'Gnome', 'Forest Gnome'):
+    elif char_race in ('Halfling', 'Lightfoot Halfling', 'Stout Halfling', 'Gnome', 'Forest Gnome'):
       weight_mod = height_mod
     else:
       pass
@@ -951,36 +952,41 @@ def alignment_fn():
   print('Your alignment is ', align_lawchaos, '-', align_goodevil)
 
 def summary_fn():
-  print('##########################################')
-  print('#                Summary                 #')
-  print('##########################################')
-  print(plyr_name, "'s: ", char_race, '-', char_class)
-  print(char_name)
-  print('##########################################')
+  print('Dungeons and Dragons, 5th Edition Character')
+  print('###########################################')
+  print('Character:      ', char_name)
+  print('Race:           ', char_race)
+  print('Class:          ', char_class)
+  print('Player:         ', plyr_name)
+  print('')
   print('Height:         ', char_heightft, "'", char_heightin, '"')
   print('Weight:         ', char_weight, 'lbs.')
   print('Age:            ', char_age, 'years old')
   print('Gender:         ', char_gender)
   print('Alignment:      ', align_lawchaos, '-', align_goodevil)
-  print('##########################################')
+  print('')
   print('Max Hit Points: ', char_hp)
   print('Armor Class:    ', char_ac)
   print('Attack Bonus:   ', atk_bonus)
   print('Primary Stat:   ', prim_stat)
-  print('##########################################')
+  print('')
   print('Strength:       ', abl_str,  '(', mod_str, ')')
   print('Dexterity:      ', abl_dex,  '(', mod_dex, ')')
   print('Constitution:   ', abl_con,  '(', mod_con, ')')
   print('Intelligence:   ', abl_int,  '(', mod_int, ')')
   print('Wisdom:         ', abl_wis,  '(', mod_wis, ')')
   print('Charisma:       ', abl_cha,  '(', mod_cha, ')')
+
   
 def save_fn():
   save_opt = input('Do you want to save this character? ')
   if save_opt in ('Y', 'y', 'Yes', 'yes'):
-  	f = open(char_name, 'w')
-  	f.write(summary_fn())
-  	print()
+    original = sys.stdout
+    f = open(char_name + '.txt', 'w')
+    sys.stdout = f
+    summary_fn()
+    f.close()
+    sys.stdout = original
   else:
     pass
 
