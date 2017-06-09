@@ -141,6 +141,42 @@ abilities = [
 # Functions #
 #############
 
+def start_fn():
+  print('')
+  print('        What would you like to do?          ')
+  print('        1) (C)reate Character               ')
+  print('        2) (R)oll Dice                      ')
+  print('        3) Roll Initiative (raw)            ')
+  print('        4) Tarokka Fortune Cards            ')
+  print('        5) Wild Magic (Roll Effect)         ')
+  print('        0) (Q)uit                           ')
+  print('')
+  option = input('What would you like to do? ')
+  if option in ('C', 'c', '1'):
+    pass
+  elif option in ('R', 'r', '2'):
+    dice = int(input('How many dice? '))
+    sides = int(input('How many sides on each die? '))
+    for _ in itertools.repeat(None, dice):
+      print(random.randrange(1,sides))
+      start_fn()
+  elif option == '3':
+    n_players = int(input('How many initiative rolls (e.g. players + monsters)? '))
+    for _ in itertools.repeat(None, n_players):
+  	  print(secrets.choice(range(1,20)))
+    start_fn()
+  elif option == '4':
+    draw_cards_fn()
+    reveal_cards_fn()
+    start_fn()
+  elif option == '5':
+    wild_magic_fn()
+    start_fn()
+  elif option in ('Q', 'q', '0'):
+    quit()
+  else:
+    start()
+
 def draw_cards_fn():
   global drawn_cards
   drawn_cards = random.sample(card_deck, 5)
@@ -346,36 +382,6 @@ def wild_magic_fn():
     print("Each creature within 30 feet of you takes ",damage," necrotic damage.  You regain hit points equa to the sum damage")
   else:
     pass
-  
-def start_fn():
-  print('')
-  print('        What would you like to do?          ')
-  print('        1) (C)reate Character               ')
-  print('        2) (R)oll Dice                      ')
-  print('        3) Tarokka Fortune Cards            ')
-  print('        4) Wild Magic (Roll Effect)         ')
-  print('        0) (Q)uit                           ')
-  print('')
-  option = input('What would you like to do? ')
-  if option in ('C', 'c', '1'):
-    pass
-  elif option in ('R', 'r', '2'):
-    dice = int(input('How many dice? '))
-    sides = int(input('How many sides on each die? '))
-    for _ in itertools.repeat(None, dice):
-      print(random.randrange(1,sides))
-      start_fn()
-  elif option == '3':
-    draw_cards_fn()
-    reveal_cards_fn()
-    start_fn()
-  elif option == '4':
-    wild_magic_fn()
-    start_fn()
-  elif option in ('Q', 'q', '0'):
-    quit()
-  else:
-    start()
 
 def race_fn():
   global char_race
@@ -418,7 +424,7 @@ def height_fn ():
       height_mod = random.randrange(1,6) + random.randrange(1,6)
     elif char_race in ('Dragonborn', 'Half-Elf', 'Tiefling'):
       height_mod = random.randrange(1,8) + random.randrange(1,8)
-    elif char_race in ('Human', 'High Elf', 'Wood Elf', 'Elf'):
+    elif char_race in ('Human', 'High Elf', 'Wood Elf', 'Elf', 'Half-Orc'):
       height_mod = random.randrange(1,10) + random.randrange(1,10)
     else: 
       pass
@@ -480,7 +486,7 @@ def weight_fn():
       weight_mod = height_mod * random.randrange(1,4)
     elif char_race == 'Drow':
       weight_mod = height_mod * random.randrange(1,6)
-    elif char_race in ('Halfling', 'Gnome', 'Forest Gnome'):
+    elif char_race in ('Halfling', 'Lightfoot Halfling', 'Gnome', 'Forest Gnome'):
       weight_mod = height_mod
     else:
       pass
@@ -968,7 +974,15 @@ def summary_fn():
   print('Intelligence:   ', abl_int,  '(', mod_int, ')')
   print('Wisdom:         ', abl_wis,  '(', mod_wis, ')')
   print('Charisma:       ', abl_cha,  '(', mod_cha, ')')
-  start_fn()
+  
+def save_fn():
+  save_opt = input('Do you want to save this character? ')
+  if save_opt in ('Y', 'y', 'Yes', 'yes'):
+  	f = open(char_name, 'w')
+  	f.write(summary_fn())
+  	print()
+  else:
+    pass
 
 # Script
 start_fn()
@@ -996,3 +1010,6 @@ print('')
 alignment_fn()
 print('')
 summary_fn()
+print('')
+save_fn()
+start_fn()
