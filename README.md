@@ -6,13 +6,14 @@ Interactive command line tools for Dungeons and Dragons 5th Edition.  This is th
 
 #### Features:
 
-- Compeltely interactive (menu prompt after each function completes)
-- Character generator (can be completely random)
-- Save generated characer file as text file
-- Dice roller (any number of dice, any number of sides)
-- Tarokka card game (Tarrot cards from Curse of Strahd)
-- Wild Magic effect roller (for Sorcerers)
-- Initiative roller (raw / without proficiency bonus)
+- *Compeltely interactive:*  promted with start menu after every function
+- *Character generator:*  any or all stat blocks and features can be randomized
+- *Save generated character:*  export generated character to text file
+- *Dice roller:*  any number of dice, any number of sides
+- *Encounter calculator:* calculates modified experience per party size / level and monster party size (and CR)
+- *Initiative roller:* random d20 rolls for x number of players (raw / without initiaitve bonus)
+- *Tarokka card game:*  Tarrot card game from Curse of Strahd
+- *Wild magic effects:*  Effect roller for Wild Magic sorcerers
 
 ---
 
@@ -43,10 +44,11 @@ $ /usr/bin/dnd-tools
 
 **To Do:**
 
+- python 3.6 requirement in SRCINFO
 - script features
-  - encounter difficulty (xp multiplier)
   - magic shop generator
   - loot generator
+  - downtime activities (random roller)
   - move lists / dictionaries to library files?
   - npc generator?
   - random adventure generator?
