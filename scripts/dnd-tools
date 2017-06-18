@@ -14,6 +14,545 @@ import sys
 # Lists and Dictionaries #
 ##########################
 
+gem_10 = {
+  1 : 'Azurite',
+  2 : 'Banded Agate',
+  3 : 'Blue Quartz',
+  4 : 'Eye Agate',
+  5 : 'Hematite',
+  6 : 'Lapis Lazuli',
+  7 : 'Malchite',
+  8 : 'Moss Agate',
+  9 : 'Obsidian',
+  10 : 'Rhodochrosite',
+  11 : 'Tiger Eye',
+  12 : 'Turquoise'
+}
+
+gem_50 = {
+  1 : 'Bloodstone',
+  2 : 'Carnelian',
+  3 : 'Chalcedony',
+  4 : 'Chrysoprase',
+  5 : 'Citrine',
+  6 : 'Jasper',
+  7 : 'Moonstone',
+  8 : 'Onyx',
+  9 : 'Quartz',
+  10 : 'Sardonyx',
+  11 : 'Star rose quartz',
+  12 : 'Zircon'
+}
+
+gem_100 = {
+  1 : 'Amber',
+  2 : 'Amethyst',
+  3 : 'Chrysoberyl',
+  4 : 'Coral',
+  5 : 'Garnet',
+  6 : 'Jade',
+  7 : 'Jet',
+  8 : 'Pearl',
+  9 : 'Spinel',
+  10 : 'Tourmaline'
+}
+
+gem_500 = {
+  1 : 'Alexandrite',
+  2 : 'Aquamarine',
+  3 : 'Black Pearl',
+  4 : 'Blue Spinel',
+  5 : 'Peridot',
+  6 : 'Topaz'
+}
+
+gem_1000 = {
+  1 : 'Black Opal',
+  2 : 'Blue Sapphire',
+  3 : 'Emerald',
+  4 : 'Fire Opal',
+  5 : 'Opal',
+  6 : 'Star Ruby',
+  7 : 'Star Sapphire',
+  8 : 'Yellow Sapphire'
+}
+
+gem_5000 = {
+  1 : 'Black Sapphire',
+  2 : 'Diamond',
+  3 : 'Jacinth',
+  4 : 'Ruby'
+}
+
+art_25 = {
+  1 : 'Silver ewer',
+  2 : 'Carved bone statuette',
+  3 : 'Small gold bracelet',
+  4 : 'Cloth-of-gold vestments',
+  5 : 'Black velvet mask stitched with silver thread',
+  6 : 'Copper chalice with silver filigree',
+  7 : 'Pair of engraved bone dice',
+  8 : 'Small mirror set in a painted wooden frame',
+  9 : 'Embroidered silk handkerchief',
+  10 : 'gold locket with a painted portrait inside'
+}
+
+art_250 = {
+  1 : 'Gold ring set with bloodstones',
+  2 : 'Carved ivory statuette',
+  3 : 'Large gold bracelet',
+  4 : 'Silver necklace with gemstone pendant',
+  5 : 'Bronze crown',
+  6 : 'Silk robe with gold embroidery',
+  7 : 'Large well-made tapestry',
+  8 : 'Brass mug with jade inlay',
+  9 : 'Box of turquoise animal figurines',
+  10 : 'Gold bird cage with electrum filigree'
+}
+
+art_750 = {
+  1 : 'Silver chalice with moonstones',
+  2 : 'Sliver-plated steel longsword with jet set in hilt',
+  3 : 'Carved hard of exotic wood with ivory inlay and zirconb gems',
+  4 : 'Small gold idol',
+  5 : 'Gold dragon comb set with red garnets as eyes',
+  6 : 'Bottle stopper cork embossed with gold leaf and set with amethysts',
+  7 : 'Ceremonial electrum dagger with a black pearl in the pommel',
+  8 : 'Silver and gold brooch',
+  9 : 'Obsidian statuette with gold fittings and inlay',
+  10 : 'Painted gold war mask'
+}
+
+art_2500 = {
+  1 : 'Fine gold chain set with a fire opal',
+  2 : 'Old masterpiece painting',
+  3 : 'Embroidered silk and velvet mantle set with numerous moonstones',
+  4 : 'Platinum bracelet set with a sapphire',
+  5 : 'Embroidered glove set with jewel chips',
+  6 : 'Jeweled anklet',
+  7 : 'Gold music box',
+  8 : 'Gold circlet set with four aquamarines',
+  9 : 'Eye patch with a mock eye set in blue sapphire and moonstone',
+  10 : 'A necklace string of small pink pearls'
+}
+
+art_7500 = {
+  1 : 'Jeweled gold crown',
+  2 : 'Jeweled platinum ring',
+  3 : 'Small gold statuette set with rubies',
+  4 : 'Gold cup set with emeralds',
+  5 : 'Gold jewlery box with platinum filigree',
+  6 : 'Painted gold child sarcophagus',
+  7 : 'Jade game board with solid gold playing pieces',
+  8 : 'Bejeweled ivory drinking horn with gold filigree'
+}
+
+item_a = {
+  range(1,50) : 'Potion of healing',
+  range(51,60) : 'Spell scroll - cantrip',
+  range(61,70) : 'Potion of climbing',
+  range(71, 90) : 'Spell scroll - 1st level',
+  range(91,94) : 'Spell scroll - 2nd level',
+  range(95,98) : 'Potion of greater healing',
+  99 : 'Bag of holding',
+  100 : 'Driftglobe'
+}
+
+item_b = {
+  range(1,15) : 'Potion of greater healing',
+  range(16,22) : 'Potrange of keys in dictionaryion of fire breath',
+  range(23,29) : 'Potion of resistance',
+  range(30,34) : 'Ammunition, +1',
+  range(35,39) : 'Potion of animal friendship',
+  range(40,44) : 'Potion of hill giant strength',
+  range(45,49) : 'Potion of growth',
+  range(50,54) : 'Potion of water breathing',
+  range(55,59) : 'Spell scroll - 2nd level',
+  range(60,64) : 'Spell scroll - 3rd level',
+  range(65,67) : 'Bag of holding',
+  range(68,70) : 'Keoghtom ointment',
+  range(71,72) : 'Oil of slipperiness',
+  range(74,75) : 'Dust of disappearance',
+  range(76,77) : 'Dust of dryness',
+  range(78,79) : 'Dust of sneezing and choking',
+  range(80,81) : 'Elemental gem',
+  range(82,83) : 'Philter of love',
+  84 : 'Alchemy jug',
+  85 : 'Cap of water breathing',
+  86 : 'Cloak of the manta ray',
+  87 : 'Driftglobe',
+  88 : 'Goggles of night',
+  89 : 'Helm of comprehending languages',
+  90 : 'Immovable rod',
+  91 : 'Lantern of revealing',
+  92 : 'Mariner armor',
+  93 : 'Mithral armor',
+  94 : 'Potion of poison',
+  95 : 'Ring of swimming',
+  96 : 'Robe of useful items',
+  97 : 'Rope of climbing',
+  98 : 'Saddle of the cavalier',
+  99 : 'Wand of magic detection',
+  100 : 'Wand of secrets'
+}
+
+item_c = {
+  range(1,15) : 'Potion of superior healing',
+  range(16,22) : 'Spell scroll - 4th level',
+  range(23,27) : 'Ammunition, +2',
+  range(28,32) : 'Potion of clairvoyance',
+  range(33,37) : 'Potion of diminution',
+  range(38,42) : 'Potion of gaseous form',
+  range(43,47) : 'Potion of frost giant strength',
+  range(48,52) : 'Potion of stone giant strength',
+  range(53,57) : 'Potion of heroism',
+  range(58,62) : 'Potion of invulnerability',
+  range(63,67) : 'Potion of mind reading',
+  range(68,72) : 'Spell scroll - 5th level',
+  range(73,75) : 'Elixer of health',
+  range(76,78) : 'Oil of etherealness',
+  range(79,81) : 'Potion of fire giant strength',
+  range(82,84) : 'Quaal feather token',
+  range(85,87) : 'Scroll of protection',
+  range(88,89) : 'Bag of beans',
+  range(90,91) : 'Bead of force',
+  92 : 'Chime of endless water',
+  93 : 'Decanter of endless water',
+  94 : 'Eyes of minute seeing',
+  95 : 'Folding boat',
+  96 : 'Heward handy haversack',
+  97 : 'Horseshoes of speed',
+  98 : 'Necklace of fireballs',
+  99 : 'Periapt of health',
+  100 : 'Sending stones'
+}
+
+item_d = {
+  range(1,20) : 'Potion of supreme healing',
+  range(21,30) : 'Potion of invisibility',
+  range(31,40) : 'Potion of speed',
+  range(41,50) : 'Spell scroll - 6th level',
+  range(51,57) : 'Spell scroll - 7th level',
+  range(58,62) : 'Ammunition, +3',
+  range(63,67) : 'Oil of sharpness',
+  range(68,72) : 'Potion of flying',
+  range(73,77) : 'Potion of cloud giant strength',
+  range(78,82) : 'Potion of longevity',
+  range(83,87) : 'Potion of vitality',
+  range(88,92) : 'Spell scroll - 8th level',
+  range(93,95) : 'Horseshoes of zephyr',
+  range(96,98) : 'Nolzur marvelous pigments',
+  99 : 'Bag of devouring',
+  100 : 'Portable hole'
+}
+
+item_e = {
+  range(1,30) : 'Spell scroll - 8th level',
+  range(31,55) : 'Potion of storm giant strength',
+  range(56,70) : 'Potion of supreme healing',
+  range(71,85) : 'Spell scroll - 9th level',
+  range(86,93) : 'Universal solvent',
+  range(94,98) : 'Arrow of slaying',
+  range(99,100) : 'Sovereign glue'
+}
+
+item_f = {
+  range(1,15) : 'Weapon, +1',
+  range(16,18) : 'Sheild, +1',
+  range(19,21) : 'Sentinel shield',
+  range(24,25) : 'Boots of elvenkind',
+  range(26,27) : 'Boots of striding and springing',
+  range(28,29) : 'Bracers of archery',
+  range(30,31) : 'Brooch of shielding',
+  range(32,33) : 'Broom of flying',
+  range(34,35) : 'Cloak of elvenkind',
+  range(36,37) : 'Cloak of protection',
+  range(38,39) : 'Gauntlets of ogre power',
+  range(40,41) : 'Hat of disguise',
+  range(42,43) : 'Javelin of lightning',
+  range(44,45) : 'Pearl of power',
+  range(46,47) : 'Rod of the pact keeper, +1',
+  range(48,49) : 'Slippers of spider climbing',
+  range(50,51) : 'staff of the adder',
+  range(52,53) : 'Staff of the python',
+  range(54,55) : 'Sword of vengeance',
+  range(56,57) : 'Trdient of fish command',
+  range(58,59) : 'Want of magic missiles',
+  range(60,61) : 'Wand of the war mage, +1',
+  range(62,63) : 'Wand of web',
+  range(64,65) : 'Weapon of warning',
+  66 : 'Adamantine chain male',
+  67 : 'Adamantine chain shirt',
+  68 : 'Adamantine scale male',
+  69 : 'Bag of tricks - gray',
+  70 : 'Bag of tricks - rust',
+  71 : 'Bag of tricks - tan',
+  72 : 'Boots of the winterlands',
+  73 : 'Circlet of blasting',
+  74 : 'Deck of illusions',
+  75 : 'Eversmoking bottle',
+  76 : 'Eyes of charming',
+  77 : 'Eyes of the eagle',
+  78 : 'Figurine of wondrous power - silver raven',
+  79 : 'Gem of brightness',
+  80 : 'Gloves of missile snaring',
+  81 : 'Gloves of swimming and climbing',
+  82 : 'Glove of thievery',
+  83 : 'Headband of intellect',
+  84 : 'Helm of telepathy',
+  85 : 'Doss lute of the bards',
+  86 : 'Fochlucan bandor of the bards',
+  87 : 'Mac-Fuimidh cittern of the bards',
+  88 : 'Medallion of thoughts',
+  89 : 'Necklace of adaptation',
+  90 : 'Periapt of wound closure',
+  91 : 'Pipes of haunting',
+  92 : 'Pipes of sewers',
+  93 : 'Ring of jumping',
+  94 : 'Ring of mind shielding',
+  95 : 'Ring of warmth',
+  96 : 'Ring of water walking',
+  97 : 'Quiver of Ehlonna',
+  98 : 'Stone of good luck',
+  99 : 'Wind fan',
+  100 : 'Winged boots'
+}
+
+item_g = {
+  range(1,11) : 'Weapon, +2',
+  15 : 'Adamantine breastplate',
+  16 : 'Adamantine splint male',
+  17 : 'Amulet of health',
+  18 : 'Armor of vulnerability',
+  19 : 'Arrow-catching shiled',
+  20 : 'Belt of dwarvenkind',
+  21 : 'Belt of hill giant strength',
+  22 : 'Berserker axe',
+  23 : 'Boots of levitation',
+  24 : 'Boots of speed',
+  25 : 'Bowl of commanding water elementals',
+  26 : 'Bracers of defense',
+  27 : 'Brazier of commanding fire elementals',
+  28 : 'Cape of the mountebank',
+  29 : 'Censer of controlling air elementals',
+  30 : 'Armor, +1 chain male',
+  31 : 'Chain male of resistance',
+  32 : 'Armor, +1 chain shirt',
+  33 : 'Chain shirt of resistance',
+  34 : 'Cloak of displacement',
+  35 : 'Cloak of the bat',
+  36 : 'Cube of force',
+  37 : 'Daern instant fortress',
+  38 : 'Dagger of venom',
+  39 : 'Dimensional shackles',
+  40 : 'Dragon slayer',
+  41 : 'Elven chain',
+  42 : 'Flame tongue',
+  43 : 'Gem of seeing',
+  44 : 'Giant slayer',
+  45 : 'Glamoured studded leather',
+  46 : 'Helm of teleportation',
+  47 : 'Horn of blasting',
+  48 : 'Horn of Valhalla - silver or brass',
+  49 : 'Canaith mandolin of the bards',
+  50 : 'Cli lyre of the bards',
+  51 : 'Ioun stone - awareness',
+  52 : 'Ioun stone - protection',
+  53 : 'Ioun stone - reserve',
+  54 : 'Ioun stone - sustenance',
+  55 : 'Iron bands of Bilarro',
+  56 : 'Armor, +1 leather',
+  57 : 'Armor of resistance (leather)',
+  58 : 'Mace of disruption',
+  60 : 'Mace of smiting',
+  61 : 'Mantle of spell resistance',
+  62 : 'Necklace of prayer beads',
+  63 : 'Periapt of proof against poison',
+  64 : 'Ring of animal influence',
+  65 : 'Ring of evasion',
+  66 : 'Ring of feather falling',
+  67 : 'Ring of free action',
+  68 : 'Ring of protection',
+  69 : 'Ring of resistance',
+  70 : 'Ring of spell storing',
+  71 : 'Ring of the ram',
+  72 : 'Ring of x-ray vision',
+  73 : 'Robe of eyes',
+  74 : 'Rod of ruleship',
+  75 : 'Rod of the pact keeper, +2',
+  76 : 'Rope of entanglement',
+  77 : 'Armor, +1 scale mail',
+  78 : 'Scale mail of resistance',
+  79 : 'Shield, +2',
+  80 : 'Shield of missile attraction',
+  81 : 'Staff of charming',
+  82 : 'Staff of healing',
+  83 : 'Staff of swarming insects',
+  84 : 'Staff of the woodlands',
+  85 : 'Staff of withering',
+  86 : 'Stone of controlling earth elementals',
+  87 : 'Sun blade',
+  88 : 'Sword of life stealing',
+  89 : 'Sword of wounding',
+  90 : 'Tentacle rod',
+  91 : 'Vicious weapon',
+  92 : 'Wand of blinding',
+  93 : 'Wand of enemy detection',
+  94 : 'Wand of fear',
+  95 : 'Wand of fireballs',
+  96 : 'Wand of lightning bolts',
+  97 : 'Wand of paralysis',
+  98 : 'Wand of the war mage, +2',
+  99 : 'Wand of wonder',
+  100 : 'Wings of flying'
+}
+
+item_g_12 = {
+  1 : 'Figurine of wondrous power - bronze griffon',
+  2 : 'Figurine of wondrous power - ebony fly',
+  3 : 'Figurine of wondrous power - golden lions',
+  4 : 'Figurine of wondrous power - ivory goats',
+  5 : 'Figurine of wondrous power - marble elephant',
+  range(6,7) : 'Figurine of wondrous power - onyx dog',
+  8 : 'Figurine of wondrous power - serpentine owl',
+}
+
+item_h = {
+  range(1,10) : 'Weapon, +3',
+  range(11,12) : 'Amulet of the planes',
+  range(13,14) : 'Carpet of flying',
+  range(15,16) : 'Crystal ball (very rare version)',
+  range(17,18) : 'Ring of regeneration',
+  range(19,20) : 'Ring of shooting stars',
+  range(21,22) : 'Ring of telekinesis',
+  range(23,24) : 'Robe of scintillating colors',
+  range(25,26) : 'Robe of stars',
+  range(27,28) : 'Rod of absorption',
+  range(29,30) : 'Rod of alertness',
+  range(31,32) : 'Rod of security',
+  range(33,34) : 'Rod of the pact keeper, +3',
+  range(35,36) : 'Scimitar of speed',
+  range(37,38) : 'Shield, +3',
+  range(39,40) : 'Staff of fire',
+  range(41,42) : 'Staff of frost',
+  range(43,44) : 'Staff of power',
+  range(45,46) : 'Staff of striking',
+  range(47,48) : 'Staff of thunder and lightning',
+  range(49,50) : 'Sword of sharpness',
+  range(51,52) : 'Wand of polymorph',
+  range(53,54) : 'Wand of the war mage, +3',
+  55 : 'Adamantine half plate',
+  56 : 'Adamantine full plate',
+  57 : 'Animated shield',
+  58 : 'Belt of fire giant strength',
+  59 : 'Belt of frost (or stone) giant strength',
+  60 : 'Breastplate, +1',
+  61 : 'Candle of invocation',
+  63 : 'Chainmail, +2',
+  64 : 'Chain shirt, +2',
+  65 : 'Cloak of arachnida',
+  66 : 'Dancing sword',
+  67 : 'Demon armor',
+  68 : 'Dragon scale mail',
+  69 : 'Dwarven plate',
+  70 : 'Dwarven thrower',
+  71 : 'Efreeti bottle',
+  72 : 'Figurine of wondrous power (obsidian steed)',
+  73 : 'Frost brand',
+  74 : 'Helm of brilliance',
+  75 : 'Horn of Valhalla (bronze)',
+  76 : 'Anstruth harp of the bards',
+  77 : 'Ioun stone - absorption',
+  78 : 'Ioun stone - agility',
+  79 : 'Ioun stone - fortitude',
+  80 : 'Ioun stone - insight',
+  81 : 'Ioun stone - intellect',
+  82 : 'Ioun stone - leadership',
+  83 : 'Ioun stone - strength',
+  84 : 'Armor, +2 leather',
+  85 : 'Manual of bodily health',
+  86 : 'Manual of gainful exercise',
+  87 : 'Manual of golems',
+  88 : 'Manual of quickness of action',
+  89 : 'Mirror of life trapping',
+  90 : 'Nine lives stealer',
+  91 : 'Oathbow',
+  92 : 'Scale mail, +2',
+  93 : 'Spellguard shield',
+  94 : 'Armor, +1 splint',
+  95 : 'Splint armor of resistance',
+  96 : 'Studded leather armor, +1',
+  97 : 'Studded leather armor of resistance',
+  98 : 'tome of clear thought',
+  99 : 'Tome of leadership and influence',
+  100 : 'Tome of understanding'
+}
+
+item_i = {
+  range(1,5) : 'Defender',
+  range(6,10) : 'Hammer of thunderbolts',
+  range(11,15) : 'Luck blade',
+  range(16,20) : 'Sword of answering',
+  range(21,23) : 'Holy avenger',
+  range(24,26) : 'Ring of djinni summoning',
+  range(27,29) : 'Ring of invisibility',
+  range(30,32) : 'Ring of spell turning',
+  range(33,35) : 'Rod of lordly might',
+  range(36,38) : 'Staff of the magi',
+  range(39,41) : 'Vorpal sword',
+  range(42,43) : 'Belt of cloud giant strength',
+  range(44,45) : 'Breastplate, +2',
+  range(46,47) : 'Chain mail, +3',
+  range(48,49) : 'Chain shirt, +3',
+  range(50,51) : 'Cloak of invisibility',
+  range(52,53) : 'Crystal ball (legendary version)',
+  range(54,55) : 'Half plate, +1',
+  range(56,57) : 'Iron flask',
+  range(58,59) : 'Leather armor, +3',
+  range(60,61) : 'Plate armor, +1',
+  range(62,63) : 'Robe of the archmagi',
+  range(64,65) : 'Rod of ressurection',
+  range(66,67) : 'Scale mail, +1',
+  range(68,69) : 'Scarab of protection',
+  range(70,71) : 'Splint armor, +2',
+  range(72,73) : 'Studded leather armor, +2',
+  range(74,75) : 'Well of many worlds',
+  77 : 'Apparatus of Kwalish',
+  78 : 'Armor of invulnerability',
+  79 : 'Belt of storm giant strength',
+  80 : 'Cubic gate',
+  81 : 'Deck of many things',
+  82 : 'Efretti chain',
+  83 : 'Half plate armor of resistance',
+  84 : 'Horn of Valhalla (iron)',
+  85 : 'Ollamh harp of the bards',
+  86 : 'Ioun stone - greater absorption',
+  87 : 'Ioun stone - mastery',
+  88 : 'Ioun stone - regeneration',
+  89 : 'Plate armor of etherealness',
+  90 : 'Plate armor of resistance',
+  91 : 'Ring of air elemental command',
+  92 : 'Ring of earth elemental command',
+  93 : 'Ring of fire elemental command',
+  94 : 'Ring of three wishes',
+  95 : 'Ring of water elemental command',
+  96 : 'Sphere of annihilation',
+  97 : 'Talisman of pure good',
+  98 : 'Talisman of the sphere',
+  99 : 'Talisman of ultimate evil',
+  100 : 'Tome of the stilled tongue'
+}
+
+item_i_76 = {
+  range(1,2) : 'Half plate, +2',
+  range(3,4) : 'Plate armor, +2',
+  range(5,6) : 'Studded leather armor, +3',
+  range(7,8) : 'Breastplate, +3',
+  range(9,10) : 'Splint armor, +3',
+  11 : 'Half plate armor, +3',
+  12 : 'Full plate armor, +3'
+}
+
 cr_xp = {
   0 : 10,
   1/8 : 25,
@@ -50,6 +589,8 @@ cr_xp = {
   29 : 135000,
   30 : 155000,
 }
+
+item_loot = []
 
 card_deck = [
   'Hooded One (7)    ',
@@ -186,8 +727,9 @@ def start_fn():
   print('        2) (R)oll Dice                      ')
   print('        3) Roll Initiative (raw)            ')
   print('        4) Encounter Experience Calculator  ')
-  print('        5) Tarokka Fortune Cards            ')
-  print('        6) Wild Magic (Roll Effect)         ')
+  print('        5) Get Treasure!                    ')
+  print('        6) Tarokka Fortune Cards            ')
+  print('        7) Wild Magic (Roll Effect)         ')
   print('        0) (Q)uit                           ')
   print('')
   option = input('What would you like to do? ')
@@ -208,10 +750,12 @@ def start_fn():
     encounter_fn()
     start_fn()
   elif option == '5':
+    loot_menu_fn()
+  elif option == '6':
     draw_cards_fn()
     reveal_cards_fn()
     start_fn()
-  elif option == '6':
+  elif option == '7':
     wild_magic_fn()
     start_fn()
   elif option in ('Q', 'q', '0'):
@@ -219,14 +763,1391 @@ def start_fn():
   else:
     start()
 
+def loot_cr1_fn():
+  gem_n = 0
+  gem_t = '0'
+  item_loot = []
+  d100 = secrets.choice(range(1,100))
+  if d100 <= 6:
+    pass
+  elif 6 < d100 <= 16:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_10[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 16 < d100 <= 26:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+  elif 26 < d100 <= 36:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 36 < d100 <= 44:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_10[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for n in range(item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 44 < d100 <= 52:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for n in range(item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 52 < d100 <= 60:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for n in range(item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 60 < d100 <= 65:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_10[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 65 < d100 <= 70:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 70 < d100 <= 75:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+      item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 75 < d100 <= 78:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_10[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 78 < d100 <= 80:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for n in range(item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 80 < d100 <= 85:
+    roll = secrets.choice(range(1,10))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 85 < d100 <= 92:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_f))
+      item = item_f[item]
+      item_loot.appen(item)
+  elif 92 < d100 <= 97:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for n in range(item_n):
+      item = secrets.choice(list(item_f))
+      item = item_f[item]
+      item_loot.append(item)
+  elif 97 < d100 <= 99:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    choice = secrets.choice(range(1,100))
+    if choice in (12, 13, 14):
+      roll = secrets.choice(range(1,8))
+      item = item_g_12[roll]
+      item_loot.append(item)
+    else:
+      item = secrets.choice(list(item_g))
+      item = item_g[item]
+      item_loot.append(item)
+  elif d100 > 99:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    choice = secrets.choice(range(1,100))
+    if choice in (12, 13, 14):
+      roll = secrets.choice(range(1,8))
+      item = item_g_12[roll]
+      item_loot.append(item)
+    else:
+      item = secrets.choice(list(item_g))
+      item = item_g[item]
+      item_loot.append(item)
+  else:
+    pass
+  print(' ')
+  print('## Gems, Art, and Items ##')
+  print(gem_n, 'x ', gem_t)
+  for item in item_loot:
+    print(item)
+
+def loot_cr5_fn():
+  gem_n = 0
+  gem_t = '0'
+  item_loot = []
+  d100 = secrets.choice(range(1,100))
+  if d100 <= 4:
+    roll = secrets.choice(range(1,10))
+    gem_t = art_25[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+  elif 4 < d100 <= 10:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+  elif 10 < d100 <= 16:
+    roll = secrets.choice(range(1,12))
+    gem_t = gem_50[roll]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 16 < d100 <= 22:
+    roll = secrets.choice(range(1,10))
+    gem_t = gem_100[roll]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 22 < d100 <= 28:
+    gem_t = art_250[secrets.choice(range(1,12))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+  elif 28 < d100 <= 32:
+    gem_t = art_25[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 32 < d100 <= 36:
+    gem_t = art_25[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 36 < d100 <= 40:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 40 < d100 <= 44:
+    gem_t = art_250[secrets.choice(range(1,10))] 
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+  elif 44 < d100 <= 49:
+    gem_t = art_25[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 49 < d100 <= 54:
+    gem_t = gem_50[secrets.choice(range(1,12))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 54 < d100 <= 59:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 59 < d100 <= 63:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 63 < d100 <= 66:
+    gem_t = art_25[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 63 < d100 <= 69:
+    gem_t = gem_50[secrets.choice(range(1,12))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, itme_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 69 < d100 <= 72:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 72 < d100 <= 74:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 74 < d100 <= 76:
+    gem_t = art_25[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_d))
+    item = item_d[item]
+    item_loot.append(item)
+  elif 76 < d100 <= 78:
+    gem_t = gem_50[secrets.choice(range(1,12))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_d))
+    item = item_d[item]
+    item_loot.append(item)
+  elif d100 == 79:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_d))
+    item = item_d[item]
+    item_loot.append(item)
+  elif d100 == 80:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_d))
+    item = item_d[item]
+    item_loot.append(item)
+  elif 80 < d100 <= 84:
+    gem_t = art_25[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_f))
+      item = item_f[item]
+      item_loot.append(item)
+  elif 84 < d100 <= 88:
+    gem_t = gem_50[secrets.choice(range(1,12))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_f))
+      item = item_f[item]
+      item_loot.append(item)
+  elif 88 < d100 <= 91:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_f))
+      item = item_f[item]
+      item_loot.append(item)
+  elif 91 < d100 <= 94:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_f))
+      item = item_f[item]
+      item_loot.append(item)
+  elif 94 < d100 <= 96:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif d100 == 99:
+    gem_t = gem_100[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_h))
+    item = item_h[item]
+    item_loot.append(item)
+  elif d100 == 100:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_h))
+    item = item_h[item]
+    item_loot.append(item)
+  else:
+    pass
+  print(' ')
+  print('## Gems, Art, and Items ##')
+  print(gem_n, 'x ', gem_t)
+  for item in item_loot:
+    print(item)
+
+def loot_cr11_fn():
+  item_loot = []
+  gem_t = '0'
+  gem_n = 0
+  d100 = secrets.choice(range(1,100))
+  if d100 <= 3:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+  elif 3 < d100 <= 6:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+  elif 6 < d100 <= 9:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 9 < d100 <= 12:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 12 < d100 <= 15:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+  elif 15 < d100 <= 19:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+    item_n = secrets.coice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 19 < d100 <= 23:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 23 < d100 <= 26:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.chocie(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 26 < d100 <= 29:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_a))
+      item = item_a[item]
+      item_loot.append(item)
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_b))
+      item = item_b[item]
+      item_loot.append(item)
+  elif 29 < d100 <= 35:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gme_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 35 < d100 <= 40:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.chocie(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 40 < d100 <= 45:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 45 < d100 <= 54:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 54 < d100 <= 58:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 58 < d100 <= 62:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 62 < d100 <= 66:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 66 < d100 <= 68:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_e))
+    item = item_e[item]
+    item_loot.append(item)
+  elif 68 < d100 <= 70:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range (2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_e))
+    item = item_e[item]
+    item_loot.append(item)
+  elif 70 < d100 <= 72:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_e))
+    item = item_e[item]
+    item_loot.append(item)
+  elif 72 < d100 <= 74:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_e))
+    item = item_e[item]
+    item_loot.append(item)
+  elif 74 < d100 <= 76:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_f))
+    item = item_f[item]
+    item_loot.append(item)
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif 76 < d100 <= 78:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_f))
+    item = item_f[item]
+    item_loot.append(item)
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif 78 < d100 <= 80:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_f))
+    item = item_f[item]
+    item_loot.append(item)
+    item_n = secrets.chocie(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(lite(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif 80 < d100 <= 82:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_f))
+    item = item_f[item]
+    item_loot.append(item)
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif 82 < d100 <= 85:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,5))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 85 < d100 <= 88:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 88 < d100 <= 90:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 90 < d100 <= 92:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 92 < d100 <= 94:
+    gem_t = art_250[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+      choice = secrets.choice(range(1,100))
+      if choice == 76:
+        item = secrets.choice(list(item_i_76))
+        item = item_i_76[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_i))
+        item = item_i[item]
+        item_loot.append(item)
+  elif 94 < d100 <= 96:
+    gem_t = art_750[secrets.choice(range(1,10))]
+    gem_n = 0
+    for dice in range(2):
+      rolls = secrets.choice(range(1,4))
+      gem_n = gem_n + rolls
+    item = secrets.choice(list(item_i))
+    item = item_i[item]
+    item_loot.append(item)
+  elif 96 < d100 <= 98:
+    gem_t = gem_500[secrets.choice(range(1,6))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    choice = secrets.choice(range(1,100))
+    if choice == 76:
+      item = secrets.choice(list(item_i_76))
+      item = item_i_76[item]
+      item_loot.append(item)
+    else:
+      item = secrets.choice(list(item_i))
+      item = item_i[item]
+      item_loot.append(item)
+  elif 98 < d100:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    choice = secrets.choice(range(1,100))
+    if choice == 76:
+      item = secrets.choice(list(item_i_76))
+      item = item_i_76[item]
+      item_loot.append(item)
+    else:
+      item = secrets.choice(list(item_i))
+      item = item_i[item]
+      item_loot.append(item)
+  else:
+    pass
+  print(' ')
+  print('## Gems, Art, and Items ##')
+  print(gem_n, 'x ', gem_t)
+  for item in item_loot:
+    print(item)
+
+def loot_cr17_fn():
+  item_loot = []
+  gem_n = 0
+  gem_t = '0'
+  d100 = secrets.choice(range(1,100))
+  if d100 <= 2:
+    pass
+  elif 2 < d100 <= 5:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,8))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append [item]
+  elif 5 < d100 <= 8:
+    gem_t = art_2500[secrets.choice(range(1,1))]
+    gem_n = secrets.choice(range(1,10))
+    item_n = secrets.choice(range(1,8))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 8 < d100 <= 11:
+    gem_t = art_7500[secrets.choice(range(1,8))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.choice(range(1,8))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 11 < d100 <= 14:
+    gem_t = gem_5000[secrets.choice(range(1,4))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.choice(range(1,8))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.coice(list(item_c))
+      item = item_c[item]
+      item_loot.append(item)
+  elif 14 < d100 <= 22:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 22 < d100 <= 30:
+    gem_t = art_2500[secrets.choice(range(1,10))]
+    gem_n = secrets.choice(range(1,10))
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 30 < d100 <= 38:
+    gem_t = art_7500[secrets.choice(range(1,8))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.chocie(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 38 < d100 <= 46:
+    gem_t = gem_5000[secrets.choice(range(1,4))]
+    gem_n = secrets.choice(range(1,8))
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_d))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 46 < d100 <= 52:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_e))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 52 < d100 <= 58:
+    gem_t = art_2500[secrets.choice(range(1,10))]
+    gem_n = secrets.choice(range(1,10))
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_e))
+      item = item_d[item]
+      item_loot.append(item)
+  elif 58 < d100 <= 63:
+    gem_t = art_7500[secrets.choice(range(1,8))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_e))
+      item = item_e[item]
+      item_loot.append(item)
+  elif 63 < d100 <= 68:
+    gem_t = gem_5000[secrets.choice(range(1,4))]
+    gem_n = secrets.choice(range(1,8))
+    item_n = secrets.choice(range(1,6))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_e))
+      item = item_e[item]
+      item_loot.append(item)
+  elif d100 == 69:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif d100 == 70:
+    gem_t = art_2500[secrets.choice(range(1,10))]
+    gem_n = secrets.choice(range(1,10))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_d_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif d100 == 71:
+    gem_t = art_7500[secrets.choice(range(1,8))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif d100 == 72:
+    gem_t = gem_5000[secrets.choice(range(1,4))]
+    gem_n = secrets.choice(range(1,8))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice in (12, 13, 14):
+        item = secrets.choice(list(item_g_12))
+        item = item_g_12[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_g))
+        item = item_g[item]
+        item_loot.append(item)
+  elif 72 < d100 <= 74:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 74 < d100 <= 76:
+    gem_t = art_2500[secrets.choice(range(1,10))]
+    gem_n = secrets.choice(range(1,10))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 76 < d100 <= 78:
+    gem_t = art_7500[secrets.choice(range(1,8))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 78 < d100 <= 80:
+    gem_t = gem_5000[secrets.choice(range(1,4))]
+    gem_n = secrets.choice(range(1,8))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      item = secrets.choice(list(item_h))
+      item = item_h[item]
+      item_loot.append(item)
+  elif 80 < d100 <= 85:
+    gem_t = gem_1000[secrets.choice(range(1,8))]
+    gem_n = 0
+    for dice in range(3):
+      rolls = secrets.choice(range(1,6))
+      gem_n = gem_n + rolls
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice == 76:
+        item = secrets.choice(list(item_i_76))
+        item = item_i_76[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_i))
+        item = item_i[item]
+        item_loot.append(item)
+  elif 85 < d100 <= 90:
+    gem_t = art_2500[secrets.chocie(range(1,10))]
+    gem_n = secrets.choice(range(1,10))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice == 76:
+        item = secrets.choice(list(item_i_76))
+        item = item_i_76[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_i))
+        item = item_i[item]
+        item_loot.append(item)
+  elif 90 < d100 <= 95:
+    gem_t = art_7500[secrets.choice(range(1,8))]
+    gem_n = secrets.choice(range(1,4))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice == 76:
+        item = secrets.choice(list(item_i_76))
+        item = item_i_76[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_i))
+        item = item_i[item]
+        item_loot.append(item)
+  elif 95 < d100:
+    gem_t = gem_5000[secrets.choice(range(1,4))]
+    gem_n = secrets.choice(range(1,8))
+    item_n = secrets.choice(range(1,4))
+    for _ in itertools.repeat(None, item_n):
+      choice = secrets.choice(range(1,100))
+      if choice == 76:
+        item = secrets.choice(list(item_i_76))
+        item = item_i_76[item]
+        item_loot.append(item)
+      else:
+        item = secrets.choice(list(item_i))
+        item = item_i[item]
+        item_loot.append(item)
+  else:
+    pass
+  print(' ')
+  print('## Gems, Art, and Items ##')
+  print(gem_n, 'x ', gem_t)
+  for item in item_loot:
+    print(item)
+
+def loot_coins_fn():
+  global cp
+  global sp
+  global ep
+  global gp
+  global pp
+  cp = 0
+  sp = 0
+  ep = 0
+  gp = 0
+  pp = 0
+  if size in ('I', 'i', 'Individual', 'individual'):
+    if cr <= 4:
+      d100 = secrets.choice(range(1,100))
+      if d100 <= 30:
+        for dice in range(5):
+          rolls = secrets.choice(range(1.6))
+          cp = cp + rolls
+      elif 30 < d100 <= 60:
+        for dice in range(4):
+          rolls = secrets.choice(range(1,6))
+          sp = sp + rolls
+      elif 60 < d100 <= 70:
+        for dice in range(3):
+          rolls = secrets.choice(range(1,6))
+          ep = ep + rolls
+      elif 70 < d100 <= 95:
+        for dice in range(3):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+      elif 95 < d100:
+        pp = secrets.choice(range(1,6))
+      else:
+        pass
+    elif 4 < cr <= 10:
+      d100 = secrets.choice(range(1,100))
+      if d100 <= 30:
+        for dice in range(4):
+          rolls = secrets.choice(range(1,6))
+          cp = cp + rolls
+        cp = cp * 100
+        for dice in range(6):
+          rolls = secrets.choice(range(1,6))
+          ep = ep + rolls
+        ep = ep * 10
+      elif 30 < d100 <= 60:
+        for dice in range(6):
+          rolls = secrets.choice(range(1,6))
+          sp = sp + rolls
+        sp = sp * 10
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 10
+      elif 60 < d100 <= 70:
+        for dice in range(3):
+          rolls = secrets.choice(range(1,6))
+          ep = ep + rolls
+        ep = ep * 10
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 10
+      elif 70 < d100 <= 95:
+        for dice in range(4):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 10
+      elif 95 < d100:
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 10
+        for dice in range(3):
+          rolls = secrets.choice(range(1,6))
+          pp = pp + rolls
+      else:
+        pass
+    elif 10 < cr < 17:
+      d100 = secrets.choice(range(1,100))
+      if d100 <= 20:
+        for dice in range(4):
+          rolls = secrets.choice(range(1,6))
+          sp = sp + rolls
+        sp = sp * 100
+        gp = 100 * secrets.choice(range(1,6))
+      elif 20 < d100 <= 35:
+        ep = secrets.choice(range(1,6)) * 100
+        gp = secrets.choice(range(1,6)) * 100
+      elif 35 < d100 <= 75:
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 100
+      elif 75 < d100:
+        for dice in range(2):
+          rolls = secretrs.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 100
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          pp = pp + rolls
+        pp = pp * 10
+      else:
+        pass
+    elif 17 <= cr:
+      d100 = secrets.choice(range(1,100))
+      if d100 <= 15:
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          ep = ep + rolls
+        ep = ep * 1000
+        for dice in range(8):
+          rolls = secrets.choice(range(1,6))
+          gp = gp + rolls
+        gp = gp * 100
+      elif 15 < d100 <= 55:
+        gp = secrets.choice(range(1,6)) * 1000
+        pp = secrets.choice(range(1,6)) * 100
+      elif 55 < d100:
+        gp = secrets.choice(range(1,6)) * 1000
+        for dice in range(2):
+          rolls = secrets.choice(range(1,6))
+          pp = pp + rolls
+        pp = pp * 100
+      else:
+        pass
+    else:
+      loot_coins_fn()
+  elif size in ('H', 'h', 'Hoard', 'hoard'):
+    if cr <= 4:
+      for dice in range(6):
+        rolls = secrets.choice(range(1,6))
+        cp = cp + rolls
+      cp = cp * 100
+      for dice in range(3):
+        rolls = secrets.choice(range(1,6))
+        sp = sp + rolls
+      sp = sp * 100
+      for dice in range(2):
+        rolls = secrets.choice(range(1,6))
+        gp = gp * 10
+    elif 4 < cr <= 10:
+      for dice in range(2):
+        rolls = secrets.choice(range(1,6))
+        cp = cp + rolls
+      cp = cp * 100
+      for dice in range(2):
+        rolls = secrets.choice(range(1,6))
+        sp = sp + rolls
+      sp = sp * 1000
+      for dice in range(6):
+        rolls = secrets.choice(range(1,6))
+        gp = gp + rolls
+      gp = gp * 100
+      for dice in range(3):
+        rolls = secrets.choice(range(1,6))
+        pp = pp + rolls
+      pp = pp * 10
+    elif 10 < cr < 17:
+      for dice in range(4):
+        rolls = secrets.choice(range(1,6))
+        gp = gp + rolls
+      gp = gp * 1000
+      for dice in range(5):
+        rolls = secrets.choice(range(1,6))
+        pp = pp + rolls
+      pp = pp * 100
+    elif 17 <= cr:
+      for dice in range(12):
+        rolls = secrets.choice(range(1,6))
+        gp = gp + rolls
+      gp = gp * 1000
+      for dice in range(8):
+        rolls = secrets.choice(range(1,6))
+        pp = pp + rolls
+      pp = pp * 1000
+    else:
+      loot_coins_fn()
+  else:
+    loot_coins_fn()
+  print('')
+  print('## Coins ##')
+  print('cp: ', ep)
+  print('sp: ', sp)
+  print('ep: ', ep)
+  print('gp: ', gp)
+  print('pp: ', pp)
+
+def loot_menu_fn():
+  print('')
+  global cr
+  global size
+  cr = float(input('Enter CR that loot is being awarded for (e.g.: 0.5, 5, 17): '))
+  size = input('Enemies being looted, (I)ndividual or (H)oard? ')
+  if size in ('H', 'h', 'Hoard', 'hoard'):
+    loot_coins_fn()
+    if cr < 5:
+      loot_cr1_fn()
+    elif 5 <= cr < 11:
+      loot_cr5_fn()
+    elif 11 <= cr < 17:
+      loot_cr11_fn()
+    elif 17 < cr:
+      loot_cr17_fn()
+    else:
+      loot_menu_fn()
+    start_fn()
+  else:
+    loot_coins_fn()
+    start_fn()
+
 def encounter_fn():
   # player stats
   party_n = int(input('How many players? '))
   if party_n == 1:
     party_lvl = int(input('Enter character level: '))
   elif party_n in (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20):
-    party_sum = int(input('Enter party level SUM: '))
-    party_lvl = paty_sum // party_n
+    party_lvl = int(input('Enter party level SUM: '))
+    party_lvl = party_lvl // party_n
   else:
     encounter_fn()
   # monster stats
