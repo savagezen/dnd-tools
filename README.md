@@ -8,6 +8,7 @@
 
 - *Compeltely interactive:*  promted with start menu after every function
 - *Character generator:*  any or all stat blocks and features can be randomized
+- *NPC generator:*  35 NPC classes with stat blocks populate as with character creation.  Fixed NPC stats are in the Monster Manual and many places online.
 - *Save generated character:*  export generated character to text file
 - *Dice roller:*  any number of dice, any number of sides
 - *Encounter calculator:* calculates modified experience per party size / level and monster party size (and CR)
@@ -21,8 +22,8 @@
 #### Installation / Usage:
 
 **Arch**:
-- See [Arch Wiki for Installing AUR Packages](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages))
-- [Download PKGBUILD files from AUR](https://aur.archlinux.org/packages/dnd-tools/))
+- See [Arch Wiki for Installing AUR Packages](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
+- [Download PKGBUILD files from AUR](https://aur.archlinux.org/packages/dnd-tools/)
 
 **Other Linux**:
 ~~~
@@ -43,7 +44,6 @@ $ /usr/bin/dnd-tools
 
 **To Do:**
 
-- python 3.6 requirement in SRCINFO
 - script features
   - magic shop generator
   - downtime activities (random roller)

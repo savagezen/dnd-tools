@@ -10,13 +10,11 @@
   - ```$ namcap PKGBUILD```
 - [Added AGPLv3 license](https://choosealicense.com/licenses/agpl-3.0/#)
 - [Submit package to AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository#Submitting_packages)
-  - Generate ```.SRCINFO```; ```$ makepkg --printsrcinfo > .SRCINFO`````
+  - Generate package info
+  - ```.SRCINFO```; ```$ makepkg --printsrcinfo > .SRCINFO```
 - libraries going to stay internal to make cross platform support easier
 
 ---
 
-Loot Generator:
-- lists (gems, art, items)
-- hoard 5-10
-- hoard 11-16
-- houar 17+
+
+---

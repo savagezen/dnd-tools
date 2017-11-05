@@ -712,15 +712,24 @@ class_desc = [
     "Ranger    - One who blends wilderness knowledge and martial ability",
     "Rogue     - The theif, assassin, and stealthy character.",
     "Sorcerer  - A magic user who draws power from within.",
-    "Warlock   - Pacted to a diety for empowering spells.",
+    "Warlock   - Pacted to a deity for empowering spells.",
     "Wizard    - Keeper of arcane secrets and manipulator of magic."
 ]
-
 
 # Class Descriptions - https://redd.it/2e9vzl
 
 class_short = [
     "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"
+]
+
+# NPC Class Info - http://www.5esrd.com/gamemastering/monsters-foes/npc/
+
+class_npc = [
+    "Acolyte", "Archmage", "Assassin", "Bandit Captain", "Bandit Lord", "Bandit / Pirate", "Berserker", "Black Knight Commander", "City Watch Captain", "Commoner", "Cult Fanatic", "Cult Leader", "Cult Sorcerer", "Cultist", "Devilbound Gnomish Prince", "Druid", "Dwarven Ringmage", "Elvish Veteran Archer", "Ghost Knight", "Gladiator", "Guard", "Half-Red Dragon Veteran", "Knight", "Mage", "Noble", "Corrupted Ogre Chieftain", "Priest", "Ratfolk Rogue", "Scorpion Cultist", "Scout", "Spy", "Thug", "Tribal Warrior", "Veteran", "Wolf Reaver Dwarf"
+]
+
+culture_npc = [
+    "Babylonian", "Celtic", "Egyptian", "Greek", "Roman", "Sumerian", "English", "French", "German", "Italian", "Norse", "Saxon", "Slavic", "Spanish", "Arabic", "Chineese", "Hebrew", "Hindu", "Japanese", "Mongolian", "Persian", "Congolese", "Etheopian", "Malian", "Algonquin", "Aztec", "Inkan", "Inuit", "Navajo", "Sioux"
 ]
 
 avg_stats = [
@@ -754,7 +763,7 @@ abilities = [
 def start_fn():
     print("")
     print("        What would you like to do?          ")
-    print("        1) (C)reate Character               ")
+    print("        1) (C)reate Character / NPC         ")
     print("        2) (R)oll Dice                      ")
     print("        3) Roll Initiative (raw)            ")
     print("        4) Encounter Experience Calculator  ")
@@ -796,7 +805,6 @@ def start_fn():
         quit()
     else:
         start_fn()
-
 
 def loot_cr1_fn():
     gem_n = 0
@@ -2704,6 +2712,15 @@ def race_fn():
 
 
 def class_fn():
+    def adv_npc_fn():
+        adv_npc = input("Select (A)dventurer or (N)PC Class [A]: ")
+        if adv_npc in ("A", "a", "Adventurer", "adventurer", ""):
+            choose_class()
+        elif adv_npc in ("N", "n", "NPC", "npc"):
+            choose_class_npc()
+        else:
+            print("Invalid option")
+            adv_npc_fn()
     def choose_class():
         global char_class
         print("Available Classes Include:")
@@ -2718,7 +2735,21 @@ def class_fn():
             choose_class()
         else:
             pass
-    choose_class()
+    def choose_class_npc():
+        global npc_class
+        print("Available Classes Include:")
+        print("  (R)andom")
+        for npc_class in class_npc:
+            print("  ", npc_class)
+        npc_class = input("Enter NPC Class [R] ")
+        if npc_class in ("R", "r", "Random", "random", ""):
+            npc_class = (random.choice(class_npc))
+        elif npc_class not in class_npc:
+            print("Class not available")
+            choose_class_npc()
+        global char_class
+        char_class = npc_class
+    adv_npc_fn()
 
 
 def height_fn():
