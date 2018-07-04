@@ -23,7 +23,7 @@
 
 **Arch**:
 - See [Arch Wiki for Installing AUR Packages](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
-- [Download PKGBUILD files from AUR](https://aur.archlinux.org/packages/dnd-tools/)
+- [Download snapshot from AUR](https://aur.archlinux.org/packages/dnd-tools/)
 
 **Other Linux**:
 ~~~
@@ -41,13 +41,11 @@ $ /usr/bin/dnd-tools
 - [Execute script in terminal with Python](http://pythoncentral.io/execute-python-script-file-shell/)
 
 ---
+**To Do / Feature Requests:**
+If you would like a feature added, first check [issues tagged as enhancements](https://github.com/savagezen/dnd-tools/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement).  If you do not see the feature you are looking for, follow the [issue template for feature requests](https://github.com/savagesen/dnd-tools/blob/master/feature_request.md).
 
-**To Do:**
+**Bugs:**
+Please review [issues tagged as bugs](https://github.com/savagezen/dnd-tools/labels/bug) before making a new issue report.  Please be as clear and descriptive as possible when making bug reports, including output logs and what steps you've attempted to remedy the problem yourself.
 
-- script features
-  - magic shop generator
-  - downtime activities (random roller)
-  - move lists / dictionaries to library files?
-  - npc generator?
-  - random adventure generator?
-  - dungeon generator?
+**Contributing:**
+See [CONTRIBUTING.md](https://github.com/savagezen/dnd-tools/blo/master/CONTRIBUTING.md).

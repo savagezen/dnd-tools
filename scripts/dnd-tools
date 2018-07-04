@@ -3130,7 +3130,7 @@ def modifiers_fn():
     global char_ac
     global prim_stat
     global atk_bonus
-    print("Each ability score provides a modier score which benefits certain attributes.")
+    print("Each ability score provides a modifier score which benefits certain attributes.")
 
     def mod(ability):
         if ability == 1:
@@ -3257,6 +3257,531 @@ def modifiers_fn():
     print("Your primary stat is: ", prim_stat)
     print("Your attack bonus is: ", atk_bonus)
 
+def saves_fn():
+    print("Calculating saving throw bonuses...")
+    # proficiency bonus = 2 for starting characters
+    global save_str
+    save_str = mod_str
+    global save_dex
+    save_dex = mod_dex
+    global save_con
+    save_con = mod_con
+    global save_int
+    save_int = mod_int
+    global save_wis
+    save_wis = mod_wis
+    global save_cha
+    save_cha = mod_cha
+    if char_class in ("Barbarian", "barbarian"):
+        save_str = save_str + 2
+        save_con = save_con + 2
+    if char_class in ("Bard", "bard"):
+        save_dex = save_dex + 2
+        save_cha = save_cha + 2
+    if char_class in ("Cleric", "cleric"):
+        save_wis = save_wis + 2
+        save_cha = save_cha + 2
+    if char_class in ("Druid", "druid"):
+        save_wis = save_wis + 2
+        save_int = save_int + 2
+    if char_class in ("Fighter", "fighter"):
+        save_str = save_str + 2
+        save_con = save_con + 2
+    if char_class in ("Monk", "monk"):
+        save_str = save_str + 2
+        save_dex = save_dex + 2
+    if char_class in ("Paladin", "paladin"):
+        save_wis = save_wis + 2
+        save_cha = save_cha + 2
+    if char_class in ("Ranger", "ranger"):
+        save_str = save_str + 2
+        save_dex = save_dex + 2
+    if char_class in ("Rogue", "rogue"):
+        save_dex = save_dex + 2
+        save_int = save_int + 2
+    if char_class in ("Sorcerer", "sorcerer"):
+        save_con = save_con + 2
+        save_cha = save_cha + 2
+    if char_class in ("Warlock", "warlock"):
+        save_wis = save_wis + 2
+        save_cha = save_cha + 2
+    if char_class in ("Wizard", "wizard"):
+        save_int = save_int + 2
+        save_wis = save_int + 2
+    print("   Strength Saves:     ", save_str)
+    print("   Dexterity Saves:    ", save_dex)
+    print("   Constitution Saves: ", save_con)
+    print("   Wisdom Saves:       ", save_wis)
+    print("   Intelligence Saves: ", save_int)
+    print("   Charisma Saves:     ", save_cha)
+
+def skills_fn():
+    print("Some races, and all classes, have a set of skills they are proficient in.")
+    global skill_athletics
+    skill_athletics = mod_str
+    global skill_acrobatics
+    skill_acrobatics = mod_dex
+    global skill_sleight
+    skill_sleight= mod_dex
+    global skill_stealth
+    skill_stealth = mod_dex
+    global skill_arcana
+    skill_arcana = mod_dex
+    global skill_history
+    skill_history = mod_int
+    global skill_investigation
+    skill_investigation = mod_int
+    global skill_nature
+    skill_nature = mod_int
+    global skill_religion
+    skill_religion = mod_int
+    global skill_animal
+    skill_animal = mod_wis
+    global skill_insight
+    skill_insight = mod_wis
+    global skill_medicine
+    skill_medicine = mod_wis
+    global skill_perception
+    skill_perception = mod_wis
+    global skill_survival
+    skill_survival = mod_wis
+    global skill_deception
+    skill_deception = mod_cha
+    global skill_intimidation
+    skill_intimidation = mod_cha
+    global skill_performance
+    skill_performance = mod_cha
+    global skill_persuasion
+    skill_persuasion = mod_cha
+    print("   Checking for racial bonus...")
+    if char_race in ("Dwarf", "dwarf", "Mountain Dwarf", "mountain dwarf", "Hill Dwarf", "hill dwarf"):
+        print("   Your ", char_race, " race has proficiency in History.")
+        skill_history = mod_int + 2
+    if char_race in ("Elf", "elf", "High Elf", "high elf", "Wood Elf", "wood elf", "Drow", "drow"):
+        print("   Your ", char_race, " race has proficiency in Perception.")
+        skill_perception = mod_wis + 2
+    if char_race in ("Half-Orc", "half-orc"):
+        print("   Your ", char_race, " race has proficiency in Intimidation.")
+        skill_intimidation = mod_cha + 2
+    if char_race in ("Half-Elf", "half-elf"):
+        print("   Your ", char_race, " race gives you a choice of skill proficiency.")
+        def skill_choice_fn():
+            x, y = input("Chose two from: Athletics, Acrobatics, Sleight (of hand), Stealth, Arcana, History, Investigation, Nature, Religion, Animal (handling), Insight, Medicine, Perception, Survival, Deception, Intimidation, Performance, Persuasion; separated by a space:  ").split()
+            if x not in ("Athletics", "Acrobatics", "Sleight", "Stealth", "Arcana", "History", "Investigation", "Nature", "Religion", "Animal", "Insight", "Medicine", "Perception", "Survival", "Deception", "Intimidation", "Performance", "Persuasion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Athletics", "Acrobatics", "Sleight", "Stealth", "Arcana", "History", "Investigation", "Nature", "Religion", "Animal", "Insight", "Medicine", "Perception", "Survival", "Deception", "Intimidation", "Performance", "Persuasion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            elif x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Athletics":
+                skill_athletics = mod_str + 2
+            elif x or y == "Acrobatics":
+                skill_acrobatics = mod_dex + 2
+            elif x or y == "Sleight":
+                skill_sleight = mod_dex + 2
+            elif x or y == "Stealth":
+                skill_stealth = mod_dex + 2
+            elif x or y == "Arcana":
+                skill_arcana = mod_int + 2
+            elif x or y == "History":
+                skill_history == mod_int + 2
+            elif x or y == "Investigation":
+                skill_investigation = mod_int + 2
+            elif x or y == "Nature":
+                skill_nature = mod_wis + 2
+            elif x or y == "Religion":
+                skill_religion = mod_wis + 2
+            elif x or y == "Animal":
+                skill_animal = mod_wis + 2
+            elif x or y == "Insight":
+                skill_insight = mod_wis + 2
+            elif x or y == "Medicine":
+                skill_medicine = mod_wis + 2
+            elif x or y == "Perception":
+                skill_perception = mod_wis + 2
+            elif x or y == "Survival":
+                skill_survival = mod_wis + 2
+            elif x or y == "Deception":
+                skill_deception = mod_cha + 2
+            elif x or y == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            elif x or y == "Performance":
+                skill_performance = mod_cha + 2
+            elif x or y == "Persuasion":
+                skill_persuasion = mod_cha + 2
+        skill_choice_fn()
+    print("   Checking for class bonus...")
+    if char_class in ("Bard", "bard"):
+        def skill_choice_fn():
+            x, y, z = input("Chose three from: Athletics, Acrobatics, Sleight (of hand), Stealth, Arcana, History, Investigation, Nature, Religion, Animal (handling), Insight, Medicine, Perception, Survival, Deception, Intimidation, Performance, Persuasion; separated by a space:  ").split()
+            if x not in ("Athletics", "Acrobatics", "Sleight", "Stealth", "Arcana", "History", "Investigation", "Nature", "Religion", "Animal", "Insight", "Medicine", "Perception", "Survival", "Deception", "Intimidation", "Performance", "Persuasion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Athletics", "Acrobatics", "Sleight", "Stealth", "Arcana", "History", "Investigation", "Nature", "Religion", "Animal", "Insight", "Medicine", "Perception", "Survival", "Deception", "Intimidation", "Performance", "Persuasion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if z not in ("Athletics", "Acrobatics", "Sleight", "Stealth", "Arcana", "History", "Investigation", "Nature", "Religion", "Animal", "Insight", "Medicine", "Perception", "Survival", "Deception", "Intimidation", "Performance", "Persuasion"):
+                print("Invalid input", z)
+                skill_choice_fn()
+            if x in (y, z):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if y in (x, z):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y or z == "Athletics":
+                skill_athletics = mod_str + 2
+            if x or y or z == "Acrobatics":
+                skill_acrobatics = mod_dex + 2
+            if x or y or z == "Sleight":
+                skill_sleight = mod_dex + 2
+            if x or y or z == "Stealth":
+                skill_stealth = mod_dex + 2
+            if x or y or z == "Arcana":
+                skill_arcana = mod_int + 2
+            if x or y or z == "History":
+                skill_history = mod_int + 2
+            if x or y or z == "Investigation":
+                skill_investigation = mod_int + 2
+            if x or y or z == "Nature":
+                skill_nature = mod_int + 2
+            if x or y or z == "Religion":
+                skill_religion = mod_int + 2
+            if x or y or z == "Animal":
+                skill_religion = mod_wis + 2
+            if x or y or z == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y or z == "Medicine":
+                skill_medicine = mod_wis + 2
+            if x or y or z == "Perception":
+                skill_perception = mod_wis + 2
+            if x or y or z == "Survival":
+                skill_survival = mod_wis + 2
+            if x or y or z == "Deception":
+                skill_deception = mod_cha + 2
+            if x or y or z == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if x or y or z == "Performance":
+                skill_performance = mod_cha + 2
+            if x or y or z == "Persuasion":
+                skill_persuasion = mod_cha + 2
+        skill_choice_fn()
+    if char_class in ("Barbarian", "barbarian"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Animal (handling), Athletics, Intimidation, Nature, Perception, Survival; separated by a space:  ").split()
+            if x not in ("Animal", "Athletics", "Intimidation", "Nature", "Perception", "Survival"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Animal", "Athletics", "Intimidation", "Nature", "Perception", "Survival"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Animal":
+                skill_animal = mod_wis + 2
+            if x or y == "Athletics":
+                skill_athletics = mod_str + 2
+            if x or y in "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if x or y in "Nature":
+                skill_nature = mod_wis + 2
+            if x or y in "Perception":
+                skill_perception = mod_wis + 2
+            if x or y in "Survival":
+                skill_survival = mod_wis + 2
+        skill_choice_fn()
+    if char_class in ("Cleric", "cleric"):
+        def skill_choice_fn():
+            x, y = input("Chose two two from: History, Insight, Medicine, Persuasion, Religion; separated by a space:  ").split()
+            if x not in ("History", "Insight", "Medicine", "Persuasion", "Religion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("History", "Insight", "Medicine", "Persuasion", "Religion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "History":
+                skill_history = mod_int + 2
+            if x or y == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y == "Medicine":
+                skill_insight = mod_wis + 2
+            if x or y == "Persuasion":
+                skill_persuasion = mod_cha + 2
+            if x or y == "Religion":
+                skill_religion = mod_int + 2
+        skill_choice_fn()
+    if char_class in ("Druid", "druid"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Arcana, Animal (handling), Insight, Medicine, Nature, Perception, Religion, Survival; separated by a space:  ").split()
+            if x not in ("Arcana", "Animal", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Arcana", "Animal", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Arcana":
+                skill_arcana = mod_int + 2
+            if x or y == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y == "Medicine":
+                skill_medicine = mod_wis + 2
+            if x or y == "Nature":
+                skill_nature = mod_int + 2
+            if x or y == "Perception":
+                skill_peception = mod_wis + 2
+            if x or y == "Religion":
+                skill_religioin = mod_int + 2
+            if x or y == "Survival":
+                skill_survival = mod_wis + 2
+        skill_choice_fn()
+    if char_class in ("Fighter", "fighter"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Acrobatics, Animal (handling), Athletics, History, Insight, Intimidation, Perception, Survival; separated by a space:  ").split()
+            if x not in ("Acrobatics", "Animal", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Acrobatics", "Animal", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Acrobatics":
+                skill_acrobatics = mod_dex + 2
+            if x or y == "Animal":
+                skill_animal = mod_wis + 2
+            if x or y == "Athletics":
+                skill_athletics = mod_str + 2
+            if x or y == "History":
+                skill_history = mod_int + 2
+            if x or y == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if x or y == "Perception":
+                skill_perception = mod_wis + 2
+            if x or y == "Survival":
+                skill_survival = mod_wis + 2
+        skill_choice_fn()
+    if char_class in ("Monk", "monk"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Acrobatics, Athletics, History, Insight, Religion, Stealth; separated by a space:  ").split()
+            if x not in ("Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Acrobatics":
+                skill_acrobatics = mod_dex + 2
+            if x or y == "Athletics":
+                skill_athletics = mod_str + 2
+            if x or y == "History":
+                skill_history = mod_int + 2
+            if x or y == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y == "Religion":
+                skill_religion = mod_int + 2
+            if x or y == "Stealth":
+                skill_stealth = mod_dex + 2
+        skill_choice_fn()
+    if char_class in ("Paladin", "paladin"):
+        def skill_choice_fn():
+            x, y = input("Choose two from: Athletics, Insight, Intimidation, Medicine, Persuasion, Religion; separated by a space:  ").split()
+            if x not in ("Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_chocie_fn()
+            if x or y == "Athletics":
+                skill_athletics = mod_str + 2
+            if x or y == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if x or y == "Medicine":
+                skill_medicine = mod_wis + 2
+            if x or y == "Persuasion":
+                skill_persuasion = mod_cha + 2
+            if x or y == "Religion":
+                skill_religion = mod_int + 2 
+        skill_choice_fn()
+    if char_class in ("Ranger", "ranger"):
+        def skill_choice_fn():
+            x, y, z = input("Chose three from: Animal (handling), Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival; separated by a spaces:  ").split()
+            if x not in ("Animal", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Animal", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if z not in ("Animal", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x in (y, z):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if y in (x, z):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y or z == "Animal":
+                skill_animal = mod_wis + 2
+            if x or y or z == "Athletics":
+                skill_athletics = mod_str + 2
+            if x or y or z == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y or z == "Investigation":
+                skill_investigation = mod_int + 2
+            if x or y or z == "Nature":
+                skill_nature = skill_nature + 2
+            if x or y or z == "Perception":
+                skill_perception = mod_wis + 2
+            if x or y or z == "Stealth":
+                skill_stealth = mod_dex + 2
+            if x or y or z == "Survival":
+                skill_surviavl = mod_wis + 2
+        skill_choice_fn()
+    if char_class in ("Rogue", "rogue"):
+        def skill_choice_fn():
+            a, b, c, d = input("Chose four from: Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight (of hand), Stealth; separated by spaces:  ").split()
+            if a not in ("Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight", "Stealth"):
+                print("Invalid input, ", a)
+                skill_choice_fn()
+            if b not in ("Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight", "Stealth"):
+                print("Invalid input, ", b)
+                skill_choice_fn()
+            if c not in ("Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight", "Stealth"):
+                print("Invalid input, ", c)
+                skill_choice_fn()
+            if d not in ("Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight", "Stealth"):
+                print("Invalid input, ", d)
+                skill_choice_fn()
+            if a in (b, c, d):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if b in (a, c, d):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if c in (a, b, d):
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if a or b or c or d == "Acrobatics":
+                skill_acrobatics = mod_dex + 2
+            if a or b or c or d == "Athletics":
+                skill_athletics = mod_str + 2
+            if a or b or c or d == "Deception":
+                skill_deception = mod_cha + 2
+            if a or b or c or d == "Insight":
+                skill_insight = mod_wis + 2
+            if a or b or c or d == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if a or b or c or d == "Investigation":
+                skill_investigation = mod_int + 2
+            if a or b or c or d == "Perception":
+                skill_perception = mod_wis + 2
+            if a or b or c or d == "Performance":
+                skill_performance = mod_cha + 2
+            if a or b or c or d == "Persuasion":
+                skill_persuasion = mod_cha + 2
+            if a or b or c or d == "Sleight":
+                skill_slieght = mod_dex + 2
+            if a or b or c or d == "Stealth":
+                skill_stealth = mod_dex + 2
+        skill_choice_fn()
+    if char_class in ("Sorcerer", "sorcerer"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Arcana, Deception, Insight, Intimation, Persuasion, Religion; separated by a space:  ").split()
+            if x not in ("Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Arcana":
+                skill_arcana = mod_int + 2
+            if x or y == "Deception":
+                slkill_deception = mod_cha + 2
+            if x or y == "Insight":
+                skill_insight = mod_wis + 2
+            if x or y == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if x or y == "Persuasion":
+                skill_persuasion = mod_cha + 2
+            if x or y == "Religion":
+                skill_religion = mod_int + 2
+        skill_choice_fn()
+    if char_class in ("Warlock", "warlock"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Arcana, Deception, History, Intimidation, Investigation, Nature, Religion; separated by a space:  ").split()
+            if x not in ("Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Arcana":
+                skill_arcana = mod_int + 2
+            if x or y == "Deception":
+                skill_deception = mod_cha + 2
+            if x or y == "History":
+                skill_history = mod_int + 2
+            if x or y == "Intimidation":
+                skill_intimidation = mod_cha + 2
+            if x or y == "Investigation":
+                skill_investigation = mod_int + 2
+            if x or y == "Nature":
+                skill_nature = mod_int + 2
+            if x or y == "Religion":
+                skill_religion = mod_int + 2
+        skill_choice_fn()
+    if char_class in ("Wizard", "wizard"):
+        def skill_choice_fn():
+            x, y = input("Chose two from: Arcana, History, Insight, Investigation, Medicine, Religion; separated by a space:  ").split()
+            if x not in ("Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"):
+                print("Invalid input, ", x)
+                skill_choice_fn()
+            if y not in ("Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"):
+                print("Invalid input, ", y)
+                skill_choice_fn()
+            if x == y:
+                print("You cannot make the same selection twice.")
+                skill_choice_fn()
+            if x or y == "Arcana":
+                skill_arcana = mod_int + 2
+            if x or y == "History":
+                skill_history = mod_int + 2
+            if x or y == "Insight":
+                skill_insight = mod_int + 2
+            if x or y == "Investigation":
+                skill_investigation = mod_int + 2
+            if x or y == "Medicine":
+                skill_medicine = mod_wis + 2
+            if x or y == "Religion":
+                skill_religion = mod_int + 2
+        skill_choice_fn()
 
 def hp_fn():
     global char_hp
@@ -3332,35 +3857,66 @@ def alignment_fn():
         alignment_fn()
     print("Your alignment is ", align_lawchaos, "-", align_goodevil)
 
-
 def summary_fn():
+    print("###########################################")
     print("Dungeons and Dragons, 5th Edition Character")
     print("###########################################")
+    print("")
+    print("GENERAL INFORMATION:")
     if char_name:
         print("Character:      ", char_name)
-    print("Race:           ", char_race)
-    print("Class:          ", char_class)
+    print("    Race:           ", char_race)
+    print("    Class:          ", char_class)
     if plyr_name:
-        print("Player:         ", plyr_name)
+        print("    Player:         ", plyr_name)
     print("")
-    print("Height:         ", char_heightft, "'", char_heightin, '"')
-    print("Weight:         ", char_weight, "lbs.")
-    print("Age:            ", char_age, "years old")
-    print("Gender:         ", char_gender)
-    print("Alignment:      ", align_lawchaos, "-", align_goodevil)
+    print("    Height:         ", char_heightft, "'", char_heightin, '"')
+    print("    Weight:         ", char_weight, "lbs.")
+    print("    Age:            ", char_age, "years old")
+    print("    Gender:         ", char_gender)
+    print("    Alignment:      ", align_lawchaos, "-", align_goodevil)
     print("")
-    print("Max Hit Points: ", char_hp)
-    print("Armor Class:    ", char_ac)
-    print("Attack Bonus:   ", atk_bonus)
-    print("Primary Stat:   ", prim_stat)
+    print("BASIC STATS:")
+    print("    Max Hit Points: ", char_hp)
+    print("    Armor Class:    ", char_ac)
+    print("    Attack Bonus:   ", atk_bonus)
+    print("    Primary Stat:   ", prim_stat)
     print("")
-    print("Strength:       ", abl_str, "(", mod_str, ")")
-    print("Dexterity:      ", abl_dex, "(", mod_dex, ")")
-    print("Constitution:   ", abl_con, "(", mod_con, ")")
-    print("Intelligence:   ", abl_int, "(", mod_int, ")")
-    print("Wisdom:         ", abl_wis, "(", mod_wis, ")")
-    print("Charisma:       ", abl_cha, "(", mod_cha, ")")
-
+    print("ABILITY SCORES:")
+    print("    Strength:       ", abl_str, "(", mod_str, ")")
+    print("    Dexterity:      ", abl_dex, "(", mod_dex, ")")
+    print("    Constitution:   ", abl_con, "(", mod_con, ")")
+    print("    Intelligence:   ", abl_int, "(", mod_int, ")")
+    print("    Wisdom:         ", abl_wis, "(", mod_wis, ")")
+    print("    Charisma:       ", abl_cha, "(", mod_cha, ")")
+    print("")
+    print("SAVING THROWS:")
+    print("    Strength:    ", save_str)
+    print("    Dexterity:   ", save_dex)
+    print("    Constitution ", save_con)
+    print("    Intelligence ", save_int)
+    print("    Wisdom:      ", save_wis)
+    print("    Charisma:    ", save_cha)
+    print("")
+    print("SKILLS:")
+    print("    Athletics (STR):      ", skill_athletics)
+    print("    Acrobatics (DEX)      ", skill_acrobatics)
+    print("    Sleight of Hand (DEX) ", skill_sleight)
+    print("    Stealth (DEX)         ", skill_stealth)
+    print("    Arcana (INT)          ", skill_arcana)
+    print("    History (INT)         ", skill_history)
+    print("    Investigation (INT)   ", skill_investigation)
+    print("    Nature (INT)          ", skill_nature)
+    print("    Religion (INT)        ", skill_religion)
+    print("    Animal Handling (WIS) ", skill_animal)
+    print("    Insight (WIS)         ", skill_insight)
+    print("    Medicine (WIS)        ", skill_medicine)
+    print("    Perception (WIS)      ", skill_perception)
+    print("    Survival (WIS)        ", skill_survival)
+    print("    Deception (CHA)       ", skill_deception)
+    print("    Intimidation (CHA)    ", skill_intimidation)
+    print("    Performance (CHA)     ", skill_performance)
+    print("    Persuasion (CHA)      ", skill_persuasion)
 
 def save_fn():
     save_opt = input("Do you want to save this character? [Y]: ")
@@ -3399,6 +3955,10 @@ print("")
 race_bonus_fn()
 print("")
 modifiers_fn()
+print("")
+saves_fn()
+print("")
+skills_fn()
 print("")
 hp_fn()
 print("")
