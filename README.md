@@ -42,10 +42,10 @@ $ /usr/bin/dnd-tools
 
 ---
 **To Do / Feature Requests:**
-If you would like a feature added, first check [issues tagged as enhancements](https://github.com/savagezen/dnd-tools/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement).  If you do not see the feature you are looking for, follow the [issue template for feature requests](https://github.com/savagesen/dnd-tools/blob/master/feature_request.md).
+If you would like a feature added, first check [issues tagged as enhancements](https://github.com/savagezen/dnd-tools/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement).  If you do not see the feature you are looking for, follow the [issue template for feature requests](https://github.com/savagezen/dnd-tools/blob/master/feature_request.md).
 
 **Bugs:**
-Please review [issues tagged as bugs](https://github.com/savagezen/dnd-tools/labels/bug) before making a new issue report.  Please be as clear and descriptive as possible when making bug reports, including output logs and what steps you've attempted to remedy the problem yourself.
+Please review [issues tagged as bugs](https://github.com/savagezen/dnd-tools/labels/bug) before making a new issue report.  Be as clear and descriptive as possible when making bug reports, including output logs and what steps you've attempted to remedy the problem yourself.
 
 **Contributing:**
-See [CONTRIBUTING.md](https://github.com/savagezen/dnd-tools/blo/master/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/savagezen/dnd-tools/blob/master/CONTRIBUTING.md).
