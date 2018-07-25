@@ -3192,7 +3192,7 @@ def modifiers_fn():
         elif ability in (16, 17):
             mod = 3
             return mod
-        elif ability in (18, 10):
+        elif ability in (18, 19):
             mod = 4
             return mod
         elif ability in (20, 21):

@@ -5,8 +5,8 @@ Firstly, thank you for your use of and interest in contributing to this project!
 
 ```
 Version 0.1.2
-|______ 0.x.x - STABLE: major version release, significant structural change effecting majority modules, major bug fix, compatability fixes
-|______ x.1.x - BETA: bug fixes, feature additions / expansions
+|______ 0.x.x - STABLE: major version release, significant structural change effecting majority modules, major bug fix, milestone beta changes
+|______ x.1.x - BETA: bug fixes, feature additions / expansions, milestone alpha changes
 |______ x.x.2 - ALPHA: cosmetic, whitespace, typographical, formatting changes
 ```
 
