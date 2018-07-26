@@ -2602,15 +2602,15 @@ def wild_magic_fn():
     elif roll in (19, 20):
         print("You cast 'grease' centered on yourself")
     elif roll in (21, 22):
-        print("Creatures have disadvantage on svaing throws against the next spell you cast in the next minute that inbolbes a saving throw")
+        print("Creatures have disadvantage on saving throws against the next spell you cast in the next minute that involves a saving throw")
     elif roll in (23, 24):
         print("Your skin turns a vibrant shade of blue.  A 'remove curse' spell can end this effect")
     elif roll in (25, 26):
         print("An eye appears on your forehead for the next minute.  During that time, you have advantage on Wisdom (Perception) checks that rely on sight")
     elif roll in (27, 28):
-        print("For the next minute, all your spells with a casting time of 1 action have a cating time of 1 bonus action")
+        print("For the next minute, all your spells with a casting time of 1 action have a casting time of 1 bonus action")
     elif roll in (29, 30):
-        print("You teleport up to 60 feet to an unoccupied space of your choice tha tyou can see")
+        print("You teleport up to 60 feet to an unoccupied space of your choice that you can see")
     elif roll in (31, 32):
         print("You are transported to the Astral Plan until the end of your next turn, after which time you return to the space you previously occupied or the nearest unoccupied space if that space is occupied")
     elif roll in (33, 34):
@@ -2658,7 +2658,7 @@ def wild_magic_fn():
     elif roll in (89, 90):
         print("You become invisible for the next minute.  During that time, other creatures can't hear you.  The invisibility ends if you attack or cast a spell")
     elif roll in (91, 92):
-        print("If you die wihtin the next minute, you immediately come back to life as if by the 'reincarnate' spell")
+        print("If you die within the next minute, you immediately come back to life as if by the 'reincarnate' spell")
     elif roll in (93, 94):
         print("Your size increases by one size category for the next minute")
     elif roll in (95, 96):
@@ -3653,7 +3653,7 @@ def skills_fn():
             if x or y == "Persuasion":
                 skill_persuasion = mod_cha + 2
             if x or y == "Religion":
-                skill_religion = mod_int + 2 
+                skill_religion = mod_int + 2
         skill_choice_fn()
     if char_class in ("Ranger", "ranger"):
         def skill_choice_fn():
