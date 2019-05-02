@@ -815,7 +815,7 @@ def start_fn():
         sides = int(input("How many sides on each die? "))
         for _ in itertools.repeat(None, dice):
             print(random.randrange(1, sides))
-            start_fn()
+        start_fn()
     elif option == "3":
         n_players = int(input("How many initiative rolls (e.g. players + monsters)? "))
         for _ in itertools.repeat(None, n_players):
