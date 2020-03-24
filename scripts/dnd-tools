@@ -2733,7 +2733,7 @@ def race_fn():
     print("  (R)andom")
     for char_race in race_desc:
         print("  ", char_race)
-    char_race = input("Enter Your Race (effects age, height, weight) [R]: ")
+    char_race = input("Enter Your Race (affects age, height, weight) [R]: ")
     if char_race in race_short:
         pass
     elif char_race in ("R", "r", "Random", "random", ""):
