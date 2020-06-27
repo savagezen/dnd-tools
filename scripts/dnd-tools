@@ -733,7 +733,7 @@ culture_npc = [
 ]
 
 avg_stats = [
-    "   Race        Hieght  Weight         Lifespan",
+    "   Race        Height  Weight         Lifespan",
     "   ----        ------  ------         --------",
     "   Dwarf       4-5'    150 lbs.         350 years",
     "   Elf         5-6'+   150-170 lbs.     750 years",
