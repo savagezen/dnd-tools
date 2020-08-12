@@ -838,6 +838,7 @@ def start_fn():
     else:
         start_fn()
 
+        
 def loot_cr1_fn():
     gem_n = 0
     gem_t = "0"
@@ -985,7 +986,7 @@ def loot_cr1_fn():
         for n in range(item_n):
             item = random.choice(list(item_f))
             item = item_f[item]
-            item_loot.appen(item)
+            item_loot.append(item)
     elif 92 < d100 <= 97:
         roll = random.randint(1, 12)
         gem_t = gem_50[roll]
@@ -1750,7 +1751,7 @@ def loot_cr17_fn():
         for _ in itertools.repeat(None, item_n):
             item = random.choice(list(item_c))
             item = item_c[item]
-            item_loot.append[item]
+            item_loot.append(item)
     elif 5 < d100 <= 8:
         gem_t = art_2500[random.randint(1, 1)]
         gem_n = random.randint(1, 10)
@@ -2023,7 +2024,7 @@ def loot_coins_fn():
             d100 = random.randint(1, 100)
             if d100 <= 30:
                 for dice in range(5):
-                    rolls = random.randint(1.6)
+                    rolls = random.randint(1, 6)
                     cp = cp + rolls
             elif 30 < d100 <= 60:
                 for dice in range(4):
@@ -3234,7 +3235,7 @@ def modifiers_fn():
     print("The proficiency bonus for Lvl 1 characters is 2")
     print("Your class is: ", char_class)
     print("Calculating attack bonus...")
-    if char_class in ("Barbarian"):
+    if char_class is "Barbarian":
         prim_stat = "Strength"
     elif char_class in ("Bard", "Sorcerer", "Warlock"):
         prim_stat = "Charisma"
@@ -3289,6 +3290,7 @@ def modifiers_fn():
     print("Your primary stat is: ", prim_stat)
     print("Your attack bonus is: ", atk_bonus)
 
+    
 def saves_fn():
     print("Calculating saving throw bonuses...")
     # proficiency bonus = 2 for starting characters
@@ -3347,6 +3349,7 @@ def saves_fn():
     print("   Intelligence Saves: ", save_int)
     print("   Charisma Saves:     ", save_cha)
 
+    
 def skills_fn():
     print("Some races, and all classes, have a set of skills they are proficient in.")
     global skill_athletics
@@ -3354,7 +3357,7 @@ def skills_fn():
     global skill_acrobatics
     skill_acrobatics = mod_dex
     global skill_sleight
-    skill_sleight= mod_dex
+    skill_sleight = mod_dex
     global skill_stealth
     skill_stealth = mod_dex
     global skill_arcana
@@ -3397,6 +3400,7 @@ def skills_fn():
         skill_intimidation = mod_cha + 2
     if char_race in ("Half-Elf", "half-elf"):
         print("   Your ", char_race, " race gives you a choice of skill proficiency.")
+        
         def skill_choice_fn():
             x, y = input("Chose two from: Athletics, Acrobatics, Sleight (of hand), Stealth, Arcana, History, Investigation, Nature, Religion, Animal (handling), Insight, Medicine, Perception, Survival, Deception, Intimidation, Performance, Persuasion, or Random; separated by a space:  ").split()
             if x not in ("Athletics", "Acrobatics", "Sleight", "Stealth", "Arcana", "History", "Investigation", "Nature", "Religion", "Animal", "Insight", "Medicine", "Perception", "Survival", "Deception", "Intimidation", "Performance", "Persuasion", "Random", "random", "R", "r"):
@@ -3419,7 +3423,7 @@ def skills_fn():
             elif x or y == "Arcana":
                 skill_arcana = mod_int + 2
             elif x or y == "History":
-                skill_history == mod_int + 2
+                skill_history = mod_int + 2
             elif x or y == "Investigation":
                 skill_investigation = mod_int + 2
             elif x or y == "Nature":
@@ -3572,7 +3576,7 @@ def skills_fn():
             if x or y == "Perception":
                 skill_peception = mod_wis + 2
             if x or y == "Religion":
-                skill_religioin = mod_int + 2
+                skill_religion = mod_int + 2
             if x or y == "Survival":
                 skill_survival = mod_wis + 2
         skill_choice_fn()
@@ -3641,7 +3645,7 @@ def skills_fn():
                 skill_choice_fn()
             if x == y:
                 print("You cannot make the same selection twice.")
-                skill_chocie_fn()
+                skill_choice_fn()
             if x or y == "Athletics":
                 skill_athletics = mod_str + 2
             if x or y == "Insight":
@@ -3815,10 +3819,11 @@ def skills_fn():
                 skill_religion = mod_int + 2
         skill_choice_fn()
 
+        
 def hp_fn():
     global char_hp
     print("Now we need to calculate hit points.")
-    if char_class in ("Barbarian"):
+    if char_class is "Barbarian":
         hit_die = random.randint(1, 12)
         char_hp = mod_con + hit_die
         print("You scored ", char_hp, " hit points")
@@ -3889,6 +3894,7 @@ def alignment_fn():
         alignment_fn()
     print("Your alignment is ", align_lawchaos, "-", align_goodevil)
 
+    
 def summary_fn():
     print("###########################################")
     print("Dungeons and Dragons, 5th Edition Character")
@@ -3950,6 +3956,7 @@ def summary_fn():
     print("    Performance (CHA)     ", skill_performance)
     print("    Persuasion (CHA)      ", skill_persuasion)
 
+    
 def save_fn():
     save_opt = input("Do you want to save this character? [Y]: ")
     if save_opt in ("Y", "y", "Yes", "yes", ""):
